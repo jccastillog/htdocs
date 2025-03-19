@@ -1,0 +1,54 @@
+@extends('layouts.base')
+
+@section('header','Editar Servicios')
+
+@section('content')
+
+    <a href="{{route('service.index')}}" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-black uppercase tracking-widest hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150">Volver</a>
+    <form action="{{route('service.update',$service->id)}}" method="POST" enctype="multipart/form-data" class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md">
+        @csrf
+        @method('PUT')
+        <label for="name" class="block text-sm font-medium text-gray-700">Nombre del servicio</label>
+        <input type="text" id="name" name="name" placeholder="Ejemplo: Tour a la montaña" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out" value="{{$service->name}}">
+        @error('name')
+            <p>{{$message}}</p>
+        @enderror
+
+        <label for="description" class="block text-sm font-medium text-gray-700">Descripción del servicio</label>
+        <textarea id="description" name="description" placeholder="Describe el servicio..."  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out">{{$service->description}}</textarea>
+        @error('description')
+            <p>{{$message}}</p>
+        @enderror
+
+        <label for="lat" class="block text-sm font-medium text-gray-700">Latitud</label>
+        <input type="text" id="lat" name="coordenadas[lat]" placeholder="Ejemplo: 4.657846" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out" value="{{$service->coordenadas['lat']}}">
+        @error('coordenadas.lat')
+            <p>{{$message}}</p>
+        @enderror
+
+        <label for="lng" class="block text-sm font-medium text-gray-700">Longitud</label>
+        <input type="text" id="lng" name="coordenadas[lng]" placeholder="Ejemplo: -74.093675" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out" value="{{$service->coordenadas['lng']}}">
+        @error('coordenadas.lng')
+            <p>{{$message}}</p>
+        @enderror
+
+        <label class="block text-sm font-medium text-gray-700" for="activo">Estado </label>
+
+        <x-checkbox id="status" name="status" checked value="{{$service->status}}">  </x-checkbox>
+
+
+        <label class="block text-sm font-medium text-gray-700" for="service_type_id">Tipo de Servicio</label>
+        <input type="number" id="service_type_id" name="service_type_id" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out" value="{{$service->service_type_id}}">
+
+        <x-button>
+            Editar servicio
+        </x-button>
+
+    </form>
+
+    <h3 class="text-xl font-semibold text-gray-900 mb-4 bg-gray-200">Imagenes</h3>
+    @livewire('image-carousel', ['service' => $service])
+
+
+
+@endsection

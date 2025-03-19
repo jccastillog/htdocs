@@ -1,0 +1,244 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Títulos */
+h1, h2 {
+    color: #333333;
+    text-align: center;
+}
+
+/* Párrafos */
+p {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.5;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulario */
+form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333333;
+}
+
+form label input,
+form label textarea,
+form label select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form label textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Botones */
+.btn {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Imágenes */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #777;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+input[type="text"],
+input[type="file"],
+input[type="number"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.carousel {
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+    min-width: 100%;
+}
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+.control {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+.info-item strong {
+    display: block;
+    color: #555;
+}
+
+.status {
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 4px;
+    display: inline-block;
+}
+.status.active {
+    background-color: #4caf50;
+}
+.status.inactive {
+    background-color: #f44336;
+}
+
+.social-media {
+    list-style: none;
+    padding: 0;
+}
+.social-media li {
+    margin: 5px 0;
+}
+.social-media a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+.score {
+    font-size: 18px;
+    color: #ff9800;
+}
